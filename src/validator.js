@@ -1,7 +1,8 @@
 const validator = {
-  isValid: function isValid (numero) {
+  isValid: function isValid(numero) {
     let cardNumber = Array.from(numero).reverse();
     let total = 0; // declaramos variable en 0
+    let valorBoleano = false;
 
     console.log(cardNumber);
 
@@ -30,31 +31,32 @@ const validator = {
       let intNum = parseInt(cardNumber[i]); //declaamos intNum y le asignamos el valor de cardNumber[posicion]
 
       total += intNum; // le sumamos intNum a total
-      
     }
-    return total;
+    if (total % 10 === 0) {
+      valorBoleano = true;
+    } else {
+      valorBoleano = false;
+    }
+    return valorBoleano;
   },
 
-    //aquí va la función maskify
-      maskify: function maskify (numero){
-      let cardNumberGhost = numero.split(""); //.split
-      let resultGhost;
-      const array=[];
+  //aquí va la función maskify
+  maskify: function maskify(numero) {
+    let cardNumberGhost = numero.split(""); //.split
+    let resultGhost;
+    const array = [];
 
-      for(let i=0;i<cardNumberGhost.length;i++){
-      if(i>=0 && i<cardNumberGhost.length -4){
-      array.push("#");
-      }
-      else{
+    for (let i = 0; i < cardNumberGhost.length; i++) {
+      if (i >= 0 && i < cardNumberGhost.length - 4) {
+        array.push("#");
+      } else {
         array.push(cardNumberGhost[i]);
       }
     }
-      resultGhost = array.join(""); 
-      console.log(resultGhost);
-      return resultGhost;
-    
-      
-  }
- };
+    resultGhost = array.join("");
+    console.log(resultGhost);
+    return resultGhost;
+  },
+};
 
 export default validator;
