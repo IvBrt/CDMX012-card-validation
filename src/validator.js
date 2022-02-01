@@ -1,7 +1,7 @@
 const validator = {
-  isValid: function (numero) {
+  isValid: function isValid (numero) {
     let cardNumber = Array.from(numero).reverse();
-    var total = 0; // declaramos variable en 0
+    let total = 0; // declaramos variable en 0
 
     console.log(cardNumber);
 
@@ -27,13 +27,34 @@ const validator = {
 
     for (let i = 0; i < cardNumber.length; i++) {
       // iteramos para sumar
-      let intNum = parseInt(cardNumber[i]); //declaamos intNym y le asignamos el valor de cardNumber[posicion]
+      let intNum = parseInt(cardNumber[i]); //declaamos intNum y le asignamos el valor de cardNumber[posicion]
 
       total += intNum; // le sumamos intNum a total
       
     }
-    console.log("this total: " + total);
+    return total;
   },
-};
+
+    //aquí va la función maskify
+      maskify: function maskify (numero){
+      let cardNumberGhost = numero.split(""); //.split
+      let resultGhost;
+      const array=[];
+
+      for(let i=0;i<cardNumberGhost.length;i++){
+      if(i>=0 && i<cardNumberGhost.length -4){
+      array.push("#");
+      }
+      else{
+        array.push(cardNumberGhost[i]);
+      }
+    }
+      resultGhost = array.join(""); 
+      console.log(resultGhost);
+      return resultGhost;
+    
+      
+  }
+ };
 
 export default validator;
