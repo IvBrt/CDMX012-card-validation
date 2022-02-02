@@ -1,8 +1,56 @@
-body {
+/*@import url('https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap');*/
+
+
+body{
+    background: #79B4B7;
+    font-family: Helvetica, sans-serif;
+    font-size: large;
+}
+
+h1{
+    color: #D885A3;
+    text-shadow: 1px 1px 2px #655D8A;
     text-align: center;
 }
 
-section {
-    color: #E0E0D3;
-    background-color: black;
+.card{
+    background: #212121;
+    color: #d9d9d9;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+#numero{
+    text-align: center;
+    border: 0;
+    border-bottom: 2px solid #655D8A;
+    outline: 0;
+    color: #d9d9d9;
+    padding: 7px 0;
+    background: transparent;
+}
+numero:focus{
+    padding-bottom: 6px;
+    font-weight: 400px;
+    border-width: 3px;
+   background-image: linear-gradient(to left, #655D8A, #7897AB, #D885A3);
+   border-image-slice: 1;
+}
+
+.boton{
+   background-image: linear-gradient(to left, #655D8A, #7897AB, #D885A3);
+   border: none;
+   border-radius: 0.5rem
+}
+
+.vld{
+    background: #d9d9d9;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 0.5rem;
 }

@@ -2,7 +2,7 @@ const validator = {
   isValid: function isValid(numero) {
     let cardNumber = Array.from(numero).reverse();
     let total = 0; // declaramos variable en 0
-    let valorBoleano = false;
+    let isValid;
 
     console.log(cardNumber);
 
@@ -33,12 +33,13 @@ const validator = {
       total += intNum; // le sumamos intNum a total
     }
     if (total % 10 === 0) {
-      valorBoleano = true;
+      isValid = true;
     } else {
-      valorBoleano = false;
+      isValid = false;
     }
-    return valorBoleano;
+    return isValid;
   },
+
 
   //aquí va la función maskify
   maskify: function maskify(numero) {

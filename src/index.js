@@ -5,22 +5,22 @@ console.log(validator);
 let box = document.getElementById("numero");
 const send = document.getElementById("enviar");
 send.addEventListener("click", getNumber);
-let getTotal;
+let isValid;
 let mask;
-let txt = document.getElementById("texto");
-let txtValid = "valid";
-let txtInvalid = "invalid";
+let txt = document.getElementById("txt");
+let txtValid = "válida";
+let txtInvalid = "inválida";
 
 function getNumber() {
   const number = box.value;
   console.log(number);
-  getTotal = validator.isValid(number);
+  isValid = validator.isValid(number);
   mask = validator.maskify(number);
 
-  if (getTotal % 10 === 0) {
+  if (isValid) {
     txt.innerHTML = txtValid;
     box.value = mask;
-  } else {
+  } else {  
     txt.innerHTML = txtInvalid;
   }
 }
