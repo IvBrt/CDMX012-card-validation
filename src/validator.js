@@ -1,8 +1,8 @@
 const validator = {
-  isValid: function isValid(numero) {
+  isValid: function isValid(numero) { // la propiedas de mi objeto es isValid y el valor es la función
     let cardNumber = Array.from(numero).reverse();
     let total = 0; // declaramos variable en 0
-    let isValid;
+    let resultBolean;
 
     console.log(cardNumber);
 
@@ -33,13 +33,12 @@ const validator = {
       total += intNum; // le sumamos intNum a total
     }
     if (total % 10 === 0) {
-      isValid = true;
+      resultBolean = true;
     } else {
-      isValid = false;
+      resultBolean = false;
     }
-    return isValid;
+    return resultBolean; // no estoy segura si aquí debería retornar esto
   },
-
 
   //aquí va la función maskify
   maskify: function maskify(numero) {
@@ -49,12 +48,12 @@ const validator = {
 
     for (let i = 0; i < cardNumberGhost.length; i++) {
       if (i >= 0 && i < cardNumberGhost.length - 4) {
-        array.push("#");
+        array.push("#"); //El método push() añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
       } else {
         array.push(cardNumberGhost[i]);
       }
     }
-    resultGhost = array.join("");
+    resultGhost = array.join(""); // .join está colocando un espacio entre cada gatito
     console.log(resultGhost);
     return resultGhost;
   },

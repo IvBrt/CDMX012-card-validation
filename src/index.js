@@ -20,7 +20,7 @@ function getNumber() {
   if (isValid) {
     txt.innerHTML = txtValid;
     box.value = mask;
-  } else {  
+  } else {
     txt.innerHTML = txtInvalid;
   }
 }
